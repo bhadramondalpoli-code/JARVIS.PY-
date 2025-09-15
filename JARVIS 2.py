@@ -1,3 +1,17 @@
+# JARVIS.PY-
+'''Here is a description you can use for your GitHub repository. It's written to be clear, engaging, and highlight the key features of your project.
+
+🤖 Jarvis: A Python-Powered Desktop Assistant
+Jarvis is a versatile and intelligent desktop assistant built with Python. Inspired by the AI from the Iron Man movies, Jarvis can perform a wide range of tasks using a combination of voice commands and text input. It leverages powerful APIs for general knowledge, web searches, news, and weather, while also interacting with your local system to launch applications and manage files.
+
+This project is a great example of how to integrate various Python libraries and external APIs to create a functional and interactive application.Dependencies:-
+GEMINI_API_KEY
+GOOGLE_CUSTOM_SEARCH_API_KEY
+GOOGLE_CUSTOM_SEARCH_ENGINE_ID
+OPENWEATHER_API_KEY
+NEWS_API_KEY  
+OPENCAGE_API_KEY'''
+#MAIN CODE
 import pyttsx3
 import time
 import speech_recognition as sr
@@ -18,15 +32,15 @@ import google.generativeai as genai
 from timezonefinder import TimezoneFinder
 # --- 1. Configuration & API Keys ---
 engine = pyttsx3.init()
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY") or "AIzaSyAbp8UNdu84yjsOkhp3g17IzBSRcNcVyYo"
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY") or "ENTER API KEY"
 genai.configure(api_key=GEMINI_API_KEY)
-GEMINI_MODEL_NAME = 'models/gemini-2.0-flash'
+GEMINI_MODEL_NAME = 'ENTER MODEL NAME'
 gemini_model = genai.GenerativeModel(GEMINI_MODEL_NAME)
-GOOGLE_CUSTOM_SEARCH_API_KEY = "AIzaSyAITUN6iWTlpI2-1o9ni2EFGv1KW5Wx7ac"
-GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "d137846ec377b4227"
-OPENWEATHER_API_KEY = "ad3eab01b832aa2795ae9579ad605b0a"
-NEWS_API_KEY = "d6a68829ed6148a28147a0977ef9568f"
-OPENCAGE_API_KEY = "9a63d1be91464c618009e36e889cf98c"
+GOOGLE_CUSTOM_SEARCH_API_KEY = "ENTER THE API KEY"
+GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "ENTER THE ID"
+OPENWEATHER_API_KEY = "ENTER THE API KEY"
+NEWS_API_KEY = "ENTER THE NEWS API KEY"
+OPENCAGE_API_KEY = "ENTER THE API KEY"
 FOLDERS_TO_BACKUP = [
     os.path.expanduser("~/Desktop"),
     os.path.expanduser("~/Documents"),
@@ -477,3 +491,4 @@ def run_jarvis():
             process_command(query)
 if __name__ == "__main__":
     run_jarvis()
+
